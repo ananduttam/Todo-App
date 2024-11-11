@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LogIn</title>
+    <link rel="stylesheet" href="{% static 'css/todo/loginForm.css'%}">
+</head>
+<body>
+    <div class="container">
+        <form method="post">
+            <h1>SignIn</h1>
+            {% csrf_token %}
+            <input class="width height" type="text" name="name" , placeholder="Entre Your Name"><br>
+            <input class="width height" type="text" name="password" , placeholder="Entre Your Password"><br>
+            <button class="width height" type="submit">Submit</button>
+        </form>
+        <a href="/login/">
+            <button class="width height">LogIn</button>
+        </a>
+        <h1>{{error}}</h1>
+    </div>
+</body>
+</html>

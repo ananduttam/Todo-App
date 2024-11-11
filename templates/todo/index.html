@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sticky Wall</title>
+    <link rel="stylesheet" href="{% static 'css/todo/index.css'%}">
+</head>
+<body>
+    <div id="title-bar" class="grey">
+        <h1>ToDo</h1>
+    </div>
+    <div class="sticky-wall">
+        {% for todo in data %}
+            <a class="sticky-note grey" href="/edit/{{todo.id}}">
+                <h3 class="title">{{todo.title}}</h3>
+                <span>{{todo.description}}</span>
+            </a>
+        {% endfor %}
+            <a class=" sticky-note grey" id="add-buttom" href="add">
+                <img src="{% static 'images/add.svg'%}">
+            </a>
+            <a style="border: 2px solid red;" class=" sticky-note grey" id="add-buttom" href="/logout/">
+                <img src="{% static 'images/logout.svg'%}">
+            </a>
+    </div>
+</body>
+</html>

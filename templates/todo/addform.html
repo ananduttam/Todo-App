@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: beige;
+        }
+        .width{
+            width: 80vw;
+        }
+        #desc{
+            height: 300px;
+        }
+        .buttom{
+            padding: 10px;
+            width: 100%;
+            text-decoration: none;
+            color: black;
+            
+        }
+        .overflow{
+            overflow: auto;
+        }
+        #title{
+            height: 50px;
+            font-size: medium;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <form method="POST">
+            {%csrf_token%}
+            <input id="title" class=" overflow width" type="text" name="title" placeholder="Title" value="{{data.title}}"><br>
+            <textarea class=" overflow width" id="desc" type="text" name="desc" placeholder="Description">{{data.description}}</textarea><br>
+            <button class="buttom" type="submit">Add</button>
+        </form>
+        <button class="width buttom" type="button">
+            <a class="buttom width" href="/delete/{{data.id}}">Delete</a>
+        </button>
+    </div>
+</body>
+</html>
